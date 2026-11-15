@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "start": "tsx server.ts",
     "clean": "rm -rf dist server.js",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit" ,
     
     "test": "npm run test:all",
     "test:all": "npm run test:phase1 && npm run test:phase2 && npm run test:irrigation && npm run test:rotation && npm run test:data",
