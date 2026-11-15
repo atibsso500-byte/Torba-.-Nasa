@@ -38,7 +38,8 @@ For generations, farmers have relied on their deep intuition of the land, winds,
 - **Intelligent Crop Rotation Advisor (`rotationAdvisor.ts`):** Multi-criteria evaluation scoring crops across water stress, soil compatibility, economic feasibility, and seasonal continuity.
 - **Land Memory & Futures Simulation (`Timeline.tsx`, `Futures.tsx`):** Track past seasonal performance, inspect scientific evidence (`Evidence.tsx`), and simulate future climate scenarios (`Predictions.tsx`).
 - **Multilingual Accessibility (`src/i18n/`):** Designed for inclusive adoption across diverse farming communities.
-
+## Platform Preview
+"(https://drive.google.com/drive/folders/1aIZ7Xg2gi2XRr5Amyaj5IQyCs_VbNZnr)"
 
 ## Data Sources & Scientific Foundations
 
