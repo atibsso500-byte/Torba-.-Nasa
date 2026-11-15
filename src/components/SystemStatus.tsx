@@ -88,9 +88,9 @@ export const SystemStatusModal: React.FC<SystemStatusModalProps> = ({
       feature: 'ESA WorldCereal 2021',
       endpointOrDataset: 'ESA/WorldCereal/2021/MODELS/v100 (10m Resolution)',
       status: isMoroccanBasinActive
-        ? 'IMPLEMENTED AND TESTED WITH REAL DATA'
-        : 'OUTSIDE MOROCCAN 10M INVENTORY',
-      isOk: isMoroccanBasinActive,
+      ? 'STATIC REFERENCE DATA'
+     : 'OUTSIDE MOROCCAN 10M INVENTORY',
+     isOk: isMoroccanBasinActive,
       spatialRes: isAr ? '10 أمتار' : isEn ? '10 meters' : '10 mètres',
       temporalRes: isAr ? 'منتج سنوي 2020–2021' : isEn ? 'Annual product 2020–2021' : 'Produit annuel 2020–2021',
       authStatus: isAr ? 'كتالوج عام مفتوح' : isEn ? 'Public Open Catalog' : 'Catalogue public ouvert',
@@ -104,8 +104,8 @@ export const SystemStatusModal: React.FC<SystemStatusModalProps> = ({
       feature: 'Digital Earth Africa',
       endpointOrDataset: 'DE Africa Cropland Extent 2019 (10m Northern Africa)',
       status: isMoroccanBasinActive
-        ? 'IMPLEMENTED AND TESTED WITH REAL DATA'
-        : 'OUTSIDE MOROCCAN 10M INVENTORY',
+      ? 'STATIC REFERENCE DATA'
+      : 'OUTSIDE MOROCCAN 10M INVENTORY',
       isOk: isMoroccanBasinActive,
       spatialRes: isAr ? '10 أمتار' : isEn ? '10 meters' : '10 mètres',
       temporalRes: isAr ? 'مرجع تاريخي 2019' : isEn ? 'Historical 2019 baseline' : 'Référence historique 2019',
@@ -242,7 +242,8 @@ export const SystemStatusModal: React.FC<SystemStatusModalProps> = ({
                   className={`flex items-center gap-1 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg border ${
                     item.status === 'IMPLEMENTED AND TESTED WITH REAL DATA'
                       ? 'text-emerald-800 bg-emerald-50 border-emerald-300'
-                      : item.status === 'PARTIALLY WORKING'
+                      : item.status === 'STATIC REFERENCE DATA'
+                      ? 'text-amber-800 bg-amber-50 border-amber-300'
                       ? 'text-amber-800 bg-amber-50 border-amber-300'
                       : item.status === 'NOT CONFIGURED'
                       ? 'text-sky-800 bg-sky-50 border-sky-300'
