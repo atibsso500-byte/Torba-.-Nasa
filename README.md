@@ -93,7 +93,7 @@ Torba-.-Nasa/
 Follow these steps to run **TURBA** locally on your machine.
 
 ### Prerequisites
-- [Node.js](https://nodejs.org) (v18 or higher recommended)
+- [Node.js](https://nodejs.org) (v20.19+ or v22.12+)
 - `npm` and `Git`
 
 ### 1. Clone the Repository
