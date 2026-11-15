@@ -2,7 +2,8 @@
  * TURBA Scientific Observation Service
  * Integrates:
  * 1. NASA POWER Agroclimatology (MERRA-2 / GEOS-FP) for Daily Assimilated Mean, Min, Max & 30-day History
- * 2. NASA SMAP L4 / Soil Wetness Index (GWETROOT & GWETTOP 0-1 dimensionless index)
+ * 2. NASA POWER MERRA-2 Soil Wetness
+ *    (GWETROOT & GWETTOP, dimensionless 0-1 index)
  * 3. NASA GPM IMERG Daily & Climatology Precipitation Baseline
  * 4. Open-Meteo NWP model soil moisture layers (0-7cm, 7-28cm, 28-100cm, 100-255cm in m³/m³) - model output, NOT ERA5-Land
  * 5. Open-Meteo Current Weather & Numerical Weather Prediction (NWP) model assimilation
