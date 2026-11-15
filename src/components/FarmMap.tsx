@@ -171,7 +171,7 @@ const MapOverlayController: React.FC<{
     zonePolygonsRef.current.forEach((p) => p.setMap(null));
     zonePolygonsRef.current = [];
 
-    if (!showWorldCerealLayer && !showDeAfricaLayer) return;
+    if (!showWorldCerealLayer) return;
 
     MOROCCAN_AGRICULTURAL_ZONES.forEach((zone) => {
       const isSelected = selectedZoneId === zone.id;
@@ -200,7 +200,7 @@ const MapOverlayController: React.FC<{
         strokeOpacity: isSelected ? 0.95 : 0.75,
         strokeWeight: isSelected ? 3 : 1.5,
         fillColor: fillColor,
-        fillOpacity: isSelected ? 0.45 : (showDeAfricaLayer ? 0.32 : 0.22),
+        fillOpacity: isSelected ? 0.45 : 0.22,
         map: map,
         clickable: true,
         zIndex: isSelected ? 10 : 2,
@@ -220,7 +220,7 @@ const MapOverlayController: React.FC<{
       zonePolygonsRef.current.forEach((p) => p.setMap(null));
       zonePolygonsRef.current = [];
     };
-  }, [map, showWorldCerealLayer, showDeAfricaLayer, selectedZoneId, onSelectZone, onMapClick]);
+  }, [map, showWorldCerealLayer, selectedZoneId, onSelectZone, onMapClick]);
 
   // Render Saved Farms polygons
   useEffect(() => {
