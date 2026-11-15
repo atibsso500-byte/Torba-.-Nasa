@@ -121,10 +121,31 @@ function TurbaAppContent() {
     setIsLoadingEnv(true);
 
     try {
-      const [envData, sentinelData] = await Promise.all([
-        fetchNasaObservations(farm.centroid, controller.signal),
-        fetchSentinel2Observations(farm.centroid, controller.signal),
-      ]);
+      const [envResult, sentinelResult] = await Promise.allSettled([
+  fetchNasaObservations(farm.centroid, controller.signal),
+  fetchSentinel2Observations(farm.centroid, controller.signal),
+]);
+
+if (controller.signal.aborted) return;
+
+if (envResult.status === 'fulfilled') {
+  const envData = envResult.value;
+
+  setCurrentWeather(envData.currentWeather);
+  setNasaPower(envData.nasaPower);
+  setNasaSmap(envData.nasaSmap);
+  setEra5LandSoil(envData.era5LandSoil);
+  setNasaGpm(envData.nasaGpm);
+  setProvenanceRecords(envData.provenanceRecords);
+} else {
+  console.error('NASA data retrieval failed:', envResult.reason);
+}
+
+if (sentinelResult.status === 'fulfilled') {
+  setSentinel2(sentinelResult.value);
+} else {
+  console.error('Sentinel-2 retrieval failed:', sentinelResult.reason);
+}
 
       if (!controller.signal.aborted) {
         setCurrentWeather(envData.currentWeather);
