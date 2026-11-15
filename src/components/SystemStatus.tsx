@@ -244,7 +244,6 @@ export const SystemStatusModal: React.FC<SystemStatusModalProps> = ({
                       ? 'text-emerald-800 bg-emerald-50 border-emerald-300'
                       : item.status === 'STATIC REFERENCE DATA'
                       ? 'text-amber-800 bg-amber-50 border-amber-300'
-                      ? 'text-amber-800 bg-amber-50 border-amber-300'
                       : item.status === 'NOT CONFIGURED'
                       ? 'text-sky-800 bg-sky-50 border-sky-300'
                       : 'text-rose-800 bg-rose-50 border-rose-300'
