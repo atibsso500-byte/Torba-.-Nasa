@@ -109,6 +109,19 @@ app.get('/api/health', (_req, res) => {
 
 // Validation helpers
 function validateGeoParams(lat: unknown, lng: unknown): { isValid: boolean; latNum: number; lngNum: number; error?: string } {
+ if (
+  lat === undefined ||
+  lng === undefined ||
+  String(lat).trim() === "" ||
+  String(lng).trim() === ""
+) {
+  return {
+    isValid: false,
+    latNum: 0,
+    lngNum: 0,
+    error: "Latitude and longitude are required"
+  };
+ }
   const latNum = Number(lat);
   const lngNum = Number(lng);
   if (!Number.isFinite(latNum) || !Number.isFinite(lngNum)) {
