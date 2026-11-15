@@ -75,7 +75,7 @@ Torba-.-Nasa/
 │   ├── data/                  # Crop parameters, regional boundaries & agro-zones
 │   └── i18n/                  # Multilingual translation support
 ├── scripts/                   # Verification & phase testing scripts
-└── tests/                     # Automated unit & integration tests (Vitest)
+└── tests/                     # Test and verification files
 ```
 
 
@@ -84,7 +84,7 @@ Torba-.-Nasa/
 - **Frontend:** React, TypeScript, Vite, Tailwind CSS
 - **Backend:** Node.js, Express.js
 - **Geospatial & Mapping:** Google Maps Platform
-- **Testing & Verification:** Vitest & custom agronomic validation scripts
+- **Testing & Verification:** TypeScript test scripts and agronomic validation
 
 
 
