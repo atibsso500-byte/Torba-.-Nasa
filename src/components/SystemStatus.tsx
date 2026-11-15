@@ -265,7 +265,7 @@ export const SystemStatusModal: React.FC<SystemStatusModalProps> = ({
                 {t.dashboard.testLocationsTitle}
               </span>
               <span className="text-[10px] font-mono font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-300">
-                100% Real Live APIs
+                Live API Connectivity Tests
               </span>
             </div>
             <p className="text-[11px] text-stone-500">
