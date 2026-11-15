@@ -16,7 +16,30 @@ const STORAGE_KEY = 'turba_language_preference';
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Read saved language or default to Arabic ('ar') as requested by user
   const [language, setLanguageState] = useState<Language>(() => {
-    const saved = localStorage.getItem(STORAGE_KEY) as Language | null;
+    const [language, setLanguageState] = useState<Language>(() => {
+  let saved: string | null = null;
+
+  try {
+    saved = localStorage.getItem(STORAGE_KEY);
+  } catch (error) {
+    console.warn('Could not read language preference:', error);
+  }
+
+  if (saved === 'ar' || saved === 'en' || saved === 'fr') {
+    return saved;
+  }
+
+  const navLang =
+    typeof navigator !== 'undefined'
+      ? navigator.language.toLowerCase()
+      : 'ar';
+
+  if (navLang.startsWith('ar')) return 'ar';
+  if (navLang.startsWith('fr')) return 'fr';
+  if (navLang.startsWith('en')) return 'en';
+
+  return 'ar';
+});
     if (saved === 'ar' || saved === 'en' || saved === 'fr') {
       return saved;
     }
