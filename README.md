@@ -1,6 +1,6 @@
 <div align="center">
 
-# TURBA — Smarter Agriculture, Stronger Communitie
+# TURBA — Smarter Agriculture, Stronger Communities
 
 
 **TURBA** is an explainable agricultural decision-support platform developed for the **NASA Space Apps Challenge 2026**. It bridges the gap between multi-source satellite Earth observation, agronomic physics, and local farming reality—turning complex geospatial datasets into actionable, multi-season crop and water strategies.
@@ -97,7 +97,7 @@ Follow these steps to run **TURBA** locally on your machine.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com
+git clone https://github.com/atibsso500-byte/Torba-.-Nasa.git
 cd Torba-.-Nasa
 ```
 
