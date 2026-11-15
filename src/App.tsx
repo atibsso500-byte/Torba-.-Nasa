@@ -121,41 +121,37 @@ function TurbaAppContent() {
     setIsLoadingEnv(true);
 
     try {
-      const [envResult, sentinelResult] = await Promise.allSettled([
-  fetchNasaObservations(farm.centroid, controller.signal),
-  fetchSentinel2Observations(farm.centroid, controller.signal),
-]);
+  const [envResult, sentinelResult] = await Promise.allSettled([
+    fetchNasaObservations(farm.centroid, controller.signal),
+    fetchSentinel2Observations(farm.centroid, controller.signal),
+  ]);
 
-if (controller.signal.aborted) return;
+  if (controller.signal.aborted) return;
 
-if (envResult.status === 'fulfilled') {
-  const envData = envResult.value;
+  if (envResult.status === 'fulfilled') {
+    const envData = envResult.value;
 
-  setCurrentWeather(envData.currentWeather);
-  setNasaPower(envData.nasaPower);
-  setNasaSmap(envData.nasaSmap);
-  setEra5LandSoil(envData.era5LandSoil);
-  setNasaGpm(envData.nasaGpm);
-  setProvenanceRecords(envData.provenanceRecords);
-} else {
-  console.error('NASA data retrieval failed:', envResult.reason);
-}
+    setCurrentWeather(envData.currentWeather);
+    setNasaPower(envData.nasaPower);
+    setNasaSmap(envData.nasaSmap);
+    setEra5LandSoil(envData.era5LandSoil);
+    setNasaGpm(envData.nasaGpm);
+    setProvenanceRecords(envData.provenanceRecords);
+  } else {
+    console.error(
+      'NASA data retrieval failed:',
+      envResult.reason
+    );
+  }
 
-if (sentinelResult.status === 'fulfilled') {
-  setSentinel2(sentinelResult.value);
-} else {
-  console.error('Sentinel-2 retrieval failed:', sentinelResult.reason);
-}
-
-      if (!controller.signal.aborted) {
-        setCurrentWeather(envData.currentWeather);
-        setNasaPower(envData.nasaPower);
-        setNasaSmap(envData.nasaSmap);
-        setEra5LandSoil(envData.era5LandSoil);
-        setNasaGpm(envData.nasaGpm);
-        setSentinel2(sentinelData);
-        setProvenanceRecords(envData.provenanceRecords);
-      }
+  if (sentinelResult.status === 'fulfilled') {
+    setSentinel2(sentinelResult.value);
+  } else {
+    console.error(
+      'Sentinel-2 retrieval failed:',
+      sentinelResult.reason
+    );
+  }
     } catch (err) {
       if (!controller.signal.aborted) {
         console.error('Failed to retrieve environmental data:', err);
