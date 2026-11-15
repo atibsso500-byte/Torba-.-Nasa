@@ -1,7 +1,6 @@
 <div align="center">
 
-# TURBA — Smarter Agriculture, Stronger Communities
-### *Where Earth Observation Meets the Wisdom of Farmers*
+# TURBA — Smarter Agriculture, Stronger Communitie
 
 
 **TURBA** is an explainable agricultural decision-support platform developed for the **NASA Space Apps Challenge 2026**. It bridges the gap between multi-source satellite Earth observation, agronomic physics, and local farming reality—turning complex geospatial datasets into actionable, multi-season crop and water strategies.
